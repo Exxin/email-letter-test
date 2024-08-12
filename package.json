@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/email-letter/",
+    "build": "vite build --base=/email-letter-test/",
     "preview": "vite preview"
   },
   "devDependencies": {
