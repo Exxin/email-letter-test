@@ -2,84 +2,410 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/email-letter-test/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
-    
-    <script type="module" crossorigin src="/email-letter-test/commonHelpers.js"></script>
-    <link rel="stylesheet" href="/email-letter-test/assets/index-10c40100.css">
+    <title>Responsive Email Template</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .link svg {
+        fill: #52575c;
+        width: 15px;
+        height: 15px;
+      }
+      body {
+        font-family: 'Manrope', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #736767;
+      }
+      .section-content p {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 125%;
+        color: #fff;
+      }
+      .img-1 {
+        width: 214px;
+        padding: 20px;
+      }
+      .img-2 {
+        width: 200px;
+        height: 151px;
+        margin: 15px;
+      }
+      .img-3 {
+        width: 200px;
+        height: 200px;
+        margin: 15px;
+      }
+      .section-sec-box {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .container {
+        min-width: 320px;
+        margin: 20px auto;
+        background-color: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-image: url(/email-letter/assets/bg-9bf4a045.png);
+        background-position: 0px 45px;
+        background-size: 600px 1024px;
+        padding: 0;
+      }
+      .header {
+        position: relative;
+        color: #000;
+        text-align: center;
+        padding: 10px 0;
+      }
+      .header h1 {
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 62%;
+        text-transform: uppercase;
+        position: relative;
+        z-index: 2;
+      }
+      .header svg {
+        position: absolute;
+        top: 53%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+      }
+      .section-content {
+        display: flex;
+        flex-direction: column;
+      }
+      .section {
+        padding: 20px;
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0.04), 0 4px 8px rgba(0, 0, 0, 0.04),
+          0 16px 24px rgba(0, 0, 0, 0.04), 0 24px 32px rgba(0, 0, 0, 0.04);
+        background: linear-gradient(46deg, #00c6fb 0%, #005bea 100%);
+        color: white;
+        /* margin: 20px 40px; */
+        border-radius: 10px;
+      }
+      .section-box {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 40px 40px 40px 40px;
+      }
+      .section h2 {
+        margin-top: 0;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 111%;
+        color: #fff;
+      }
+      .btn {
+        visibility: hidden;
+        position: absolute;
+      }
+      .btn-mob {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 1px 0 rgba(0, 56, 255, 0.08),
+          0 2px 6px 0 rgba(0, 56, 255, 0.08),
+          0 16px 24px 0 rgba(0, 56, 255, 0.1);
+        background: linear-gradient(90deg, #29323c 0%, #485563 100%);
+        text-decoration: none;
+        margin-top: 10px;
+        border-radius: 100px;
+        padding: 8px 16px;
+        width: 146px;
+        height: 40px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 150%;
+        color: #fff;
+      }
+      .footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #f4f4f4;
+
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 114%;
+        text-align: center;
+        color: #52575c;
+      }
+      .footer a {
+        color: #4d8aff;
+        text-decoration: none;
+      }
+
+      .link a {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 114%;
+        text-align: center;
+        color: #52575c;
+      }
+
+      .link-box {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 15px;
+      }
+
+      .link {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 5px;
+      }
+      .foot-txt-box {
+        border-top: 1px solid #0c0f51;
+      }
+
+      @media screen and (min-width: 600px) {
+        .section-content {
+          display: flex;
+          flex-direction: row;
+        }
+        .btn {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 0 1px 0 rgba(0, 56, 255, 0.08),
+            0 2px 6px 0 rgba(0, 56, 255, 0.08),
+            0 16px 24px 0 rgba(0, 56, 255, 0.1);
+          background: linear-gradient(90deg, #29323c 0%, #485563 100%);
+          text-decoration: none;
+          margin-top: 10px;
+          border-radius: 100px;
+          padding: 8px 16px;
+          width: 146px;
+          height: 40px;
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 150%;
+          color: #fff;
+          visibility: visible;
+        }
+        .btn-mob {
+          visibility: hidden;
+          position: absolute;
+        }
+      }
+
+      @media screen and (min-width: 320px) {
+        .container {
+          max-width: 600px;
+          margin: 20px auto;
+          background-color: white;
+          border-radius: 10px;
+          overflow: hidden;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          background-image: url(/email-letter/assets/bg-9bf4a045.png);
+          background-position: 0px 45px;
+          background-size: 600px 1024px;
+          padding: 0;
+        }
+        .section {
+          border-radius: 10px;
+          padding: 15px;
+        }
+        .section img {
+          max-width: 90%;
+        }
+      }
+    </style>
   </head>
   <body>
-    <header class="header">
-  <nav class="nav">
-    <ul class="nav-list">
-      <li class="nav-item">
-        <a href="./page-2.html" class="nav-link">Page 2</a>
-      </li>
+    <div class="container">
+      <div class="header">
+        <h1>LOGO HERE</h1>
+        <svg
+          width="616"
+          height="96"
+          viewBox="0 0 616 96"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g filter="url(#filter0_ddd_1_67)">
+            <path
+              d="M605 75L596 84L587 75L578 84L569 75L560 84L551 75L542 84L533 75L524 84L515 75L506 84L497 75L488 84L479 75L470 84L461 75L452 84L443 75L434 84L425 75L416 84L407 75L398 84L389 75L380 84L371 75L362 84L353 75L344 84L335 75L326 84L317 75L308 84L299 75L290 84L281 75L272 84L263 75L254 84L245 75L236 84L227 75L218 84L209 75L200 84L191 75L182 84L173 75L164 84L155 75L146 84L137 75L128 84L119 75L110 84L101 75L92 84L83 75L74 84L65 75L56 84L47 75L38 84L29 75L20 84L11 75L8 78V4H608V78L605 75Z"
+              fill="#F9FAFF"
+            />
+          </g>
+          <defs>
+            <filter
+              id="filter0_ddd_1_67"
+              x="0"
+              y="0"
+              width="616"
+              height="96"
+              filterUnits="userSpaceOnUse"
+              color-interpolation-filters="sRGB"
+            >
+              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feColorMatrix
+                in="SourceAlpha"
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha"
+              />
+              <feOffset />
+              <feGaussianBlur stdDeviation="0.5" />
+              <feColorMatrix
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0"
+              />
+              <feBlend
+                mode="normal"
+                in2="BackgroundImageFix"
+                result="effect1_dropShadow_1_67"
+              />
+              <feColorMatrix
+                in="SourceAlpha"
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha"
+              />
+              <feOffset />
+              <feGaussianBlur stdDeviation="1" />
+              <feColorMatrix
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0"
+              />
+              <feBlend
+                mode="normal"
+                in2="effect1_dropShadow_1_67"
+                result="effect2_dropShadow_1_67"
+              />
+              <feColorMatrix
+                in="SourceAlpha"
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha"
+              />
+              <feOffset dy="4" />
+              <feGaussianBlur stdDeviation="4" />
+              <feColorMatrix
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0"
+              />
+              <feBlend
+                mode="normal"
+                in2="effect2_dropShadow_1_67"
+                result="effect3_dropShadow_1_67"
+              />
+              <feBlend
+                mode="normal"
+                in="SourceGraphic"
+                in2="effect3_dropShadow_1_67"
+                result="shape"
+              />
+            </filter>
+          </defs>
+        </svg>
+      </div>
+      <div class="section-box">
+        <div class="section">
+          <div class="section-sec-box">
+            <h2>Sveta111, win! lottery gifts</h2>
+            <div class="section-content">
+              <div>
+                <p>
+                  We have a whole "Universe of Prizes" and we are ready to share
+                  great gifts with you! All you have to do to get them is win an
+                  exciting lottery that runs every day.
+                </p>
+                <a href="#" class="btn">Play</a>
+              </div>
+              <img class="img-1" src="/email-letter/assets/sec_1-b5343eca.png" alt="pic-1" />
+              <!-- <a href="#" class="btn">Play</a> -->
+            </div>
+            <a href="#" class="btn-mob">Play</a>
+            <!-- <img class="img-1" src="./images/sec_1.png" alt="pic-1" /> -->
+          </div>
+        </div>
 
-      <li class="nav-item">
-        <a href="./page-3.html" class="nav-link">Page 3</a>
-      </li>
-    </ul>
-  </nav>
-</header>
+        <div class="section">
+          <div class="section-sec-box">
+            <h2>Become a champion in tournaments</h2>
+            <div class="section-content">
+              <div>
+                <p>
+                  We have a whole "Universe of Prizes" and we are ready to share
+                  great gifts with you! All you have to do to get them is win an
+                  exciting lottery that runs every day.
+                </p>
+                <a href="#" class="btn">Play</a>
+              </div>
+              <img class="img-2" src="/email-letter/assets/sec_2-dc1f5fae.png" alt="pic-2" />
+            </div>
+            <a href="#" class="btn-mob">Play</a>
+          </div>
+        </div>
 
-
-    <section>
-      <h1>Example page title</h1>
-      <!-- Path to images as from index.html file -->
-      <img src="/email-letter-test/assets/javascript-8dac5379.svg" alt="" />
-    </section>
-
-    <!-- Loads the specified .html file -->
-    <section class="vite-promo">
-  <div class="container">
-    <div class="wrapper">
-      <h2 class="title">
-        <span class="gradient">Vite</span>
-      </h2>
-      <p class="text">Next Generation Frontend Tooling</p>
-      <p class="tagline">
-        Get ready for a development environment that can finally catch up with
-        you.
-      </p>
-
-      <ul class="actions">
-        <li class="action">
-          <a
-            class="link"
-            href="https://vitejs.dev/guide/"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Get Started</a
-          >
-        </li>
-        <li class="action">
-          <a
-            class="link"
-            href="https://github.com/vitejs/vite"
-            target="_blank"
-            rel="noopener noreferrer"
-            >View on GitHub</a
-          >
-        </li>
-      </ul>
+        <div class="section">
+          <div class="section-sec-box">
+            <h2>Claim your Bonuses</h2>
+            <div class="section-content">
+              <div>
+                <p>
+                  Generous gifts are waiting for you in the form of no deposit
+                  bonuses and free spins in hot slots.
+                </p>
+                <a href="#" class="btn">Take</a>
+              </div>
+              <img class="img-3" src="/email-letter/assets/sec_3-803987f7.png" alt="pic-3" />
+            </div>
+            <a href="#" class="btn-mob">Take</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <p>If you have questions, please contact us:</p>
+        <div class="link-box">
+          <div class="link">
+            <svg width="32" height="32">
+              <symbol id="icon-envelope" viewBox="0 0 32 32">
+                <path
+                  d="M29 4h-26c-1.657 0-3 1.343-3 3v18c0 1.656 1.343 3 3 3h26c1.657 0 3-1.344 3-3v-18c0-1.657-1.343-3-3-3zM2.741 25.99l-0.731-0.732 8.249-8.248 0.731 0.732-8.249 8.248zM29.259 25.99l-8.249-8.248 0.731-0.732 8.249 8.248-0.731 0.732zM17 19.325v0.675h-2v-0.675l-12.997-12.050 1.272-1.272 12.725 11.798 12.725-11.798 1.272 1.272-12.997 12.050z"
+                ></path>
+              </symbol>
+              <use href="#icon-envelope"></use>
+            </svg>
+            <a href="mailto:support@support.email">support@support.email</a>
+          </div>
+          <div class="link">
+            <svg width="32" height="32">
+              <symbol id="icon-phone" viewBox="0 0 32 32">
+                <path
+                  d="M22 20c-2 2-2 4-4 4s-4-2-6-4-4-4-4-6 2-2 4-4-4-8-6-8-6 6-6 6c0 4 4.109 12.109 8 16s12 8 16 8c0 0 6-4 6-6s-6-8-8-6z"
+                ></path>
+              </symbol>
+              <use href="#icon-phone"></use>
+            </svg>
+            <a href="tel:+12345678900">+12345678900</a>
+          </div>
+        </div>
+        <div class="foot-txt-box">
+          <p>Some games and bonuses may not be available in your country.</p>
+          <p>
+            You take all the credit for the fact that you have registered on our
+            site. For a return link with us, please send a copy to the whole
+            sheet. You can <a href="#">subscribe</a>
+          </p>
+        </div>
+      </div>
     </div>
-
-    <div class="thumb">
-      <!-- Path to images as from index.html file -->
-      <img
-        class="pic"
-        src="/email-letter-test/assets/vite-logo-51249ca9.png"
-        alt="Vite logo"
-        width="640"
-        height="640"
-      />
-    </div>
-  </div>
-</section>
-
-
-    
   </body>
 </html>
