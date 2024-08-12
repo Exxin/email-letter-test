@@ -1,11 +1,11 @@
 {
-  "name": "email-letter",
+  "name": "portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/email-letter-test/",
+    "build": "vite build --base=/email-letter/",
     "preview": "vite preview"
   },
   "devDependencies": {
